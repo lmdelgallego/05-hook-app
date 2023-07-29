@@ -20,7 +20,7 @@ const useFetch = (url) => {
     const data = await resp.json()
 
     setState({
-      data,
+      data: data.results,
       isLoading: false,
       hasError: null
     })
