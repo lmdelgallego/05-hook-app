@@ -1,6 +1,7 @@
 import React from 'react'
-import useFetch from '../hooks/useFetch'
-import {useCounter} from '../hooks/useCounter'
+import { useCounter, useFetch } from '../hooks'
+import { IsLoading } from './IsLoading';
+import { Quote } from './Quote';
 
 export const MultipleCustomHooks = () => {
 
@@ -19,23 +20,16 @@ export const MultipleCustomHooks = () => {
       <hr />
       {
         isLoading
-          ? (
-               <div className='alert alert-info text-center'>
-                Loading...
-              </div>
-          )
+          ? <IsLoading/>
           :
             !!data && data.map( ({ _id, author, content }) => (
-              <blockquote className='blockquote text-end' key={_id} data-testid={_id}>
-                <p className='mb-2'>{content}</p>
-                <footer className='blockquote-footer'>{author}</footer>
-              </blockquote>
+              <Quote id={_id} author={author} content={content} key={_id} />
             ))
 
       }
       <button className='btn btn-primary' disabled={isLoading} onClick={ () => increment() }>Next Quote</button>
 
-
     </>
   )
+
 }
