@@ -1,7 +1,7 @@
 export const todoReducer = (initialStade, action ) => {
   switch (action.type) {
-    case 'add':
-      throw new Error(`La acción no está implementda => ${action.type}`);
+    case '[TODO] Add Todo':
+      return [...initialStade, action.payload];
       break;
     // case 'delete':
     //   return initialStade.filter(todo => todo.id !== action.payload);

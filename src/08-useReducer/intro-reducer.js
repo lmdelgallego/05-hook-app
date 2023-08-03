@@ -1,31 +1,31 @@
 
-const initialState = [{
-  id: 1,
-  todo: 'Recolactar las piedras del infinito',
-  done: false
-}]
+// const initialState = [{
+//   id: 1,
+//   todo: 'Recolactar las piedras del infinito',
+//   done: false
+// }]
 
-const todoReducer = (state = initialState, action = {}) => {  
+// const introReducer = (state = initialState, action = {}) => {  
 
-  if (action.type === '[TODO] add todo') {
-    return [...state, action.payload];
-  }
+//   if (action.type === '[TODO] add todo') {
+//     return [...state, action.payload];
+//   }
 
-  return state;
-}
+//   return state;
+// }
 
 
-let todos = todoReducer();
+// let todos = introReducer();
 
-const newTodo = {
-  id: 2,
-  todo: 'Recolctar la piedra del alma',
-  done: false
-}
+// const newTodo = {
+//   id: 2,
+//   todo: 'Recolctar la piedra del alma',
+//   done: false
+// }
 
-todos = todoReducer(todos, {
-  type: '[TODO] add todo',
-  payload: newTodo
-})
+// todos = introReducer(todos, {
+//   type: '[TODO] add todo',
+//   payload: newTodo
+// })
 
-console.log({state: todos});
+// console.log({state: todos});
