@@ -2,16 +2,6 @@ import { useEffect, useReducer } from 'react'
 import { todoReducer, TodoList, TodoAdd } from './'
 
 const initialState = [
-  // {
-  //   id: new Date().getTime(),
-  //   description: 'Aprender React',
-  //   done: false,
-  // },
-  // {
-  //   id: new Date().getTime() + 1,
-  //   description: 'Aprender Mongo',
-  //   done: false,
-  // }
 ]
 
 const init = () => {
@@ -35,6 +25,13 @@ export const TodoApp = () => {
     })
   }
 
+  const handleDelete = (todoId) => {
+    dispatch({
+      type: '[TODO] Remove Todo',
+      payload: todoId,
+    })
+  }
+
 
   return (
     <>
@@ -44,7 +41,7 @@ export const TodoApp = () => {
 
       <div className="row">
         <div className="col-7">
-          <TodoList todos={todos} />
+          <TodoList todos={todos} onDeleteTodo={handleDelete} />
         </div>
 
         <div className="col-5">
