@@ -1,15 +1,15 @@
 import { useReducer } from 'react'
-import { todoReducer } from './todoResuder'
+import { todoReducer, TodoList, TodoAdd } from './'
 
 const initialState = [
   {
     id: new Date().getTime(),
-    desc: 'Aprender React',
+    description: 'Aprender React',
     done: false,
   },
   {
     id: new Date().getTime() + 1,
-    desc: 'Aprender Mongo',
+    description: 'Aprender Mongo',
     done: false,
   }
 ]
@@ -17,6 +17,15 @@ const initialState = [
 export const TodoApp = () => {
 
   const [todos, dispatch] = useReducer(todoReducer, initialState)
+
+  const handleNewTodo = (todo) => {
+    console.log({todo})
+    dispatch({
+      type: 'add',
+      payload: todo,
+    })
+    
+  }
 
 
   return (
@@ -27,37 +36,13 @@ export const TodoApp = () => {
 
       <div className="row">
         <div className="col-7">
-          <ul className='list-group'>
-            {
-              todos.map( todo => (
-                <li key={todo.id} className='list-group-item d-flex justify-content-between'>
-                  <span className='align-self-center'>{ todo.desc }</span>
-                  <button className='btn btn-danger'>Delete</button>
-                </li>
-              ))
-            }
-          </ul>
+          <TodoList todos={todos} />
         </div>
 
         <div className="col-5">
           <h4>Add TODO</h4>
           <hr />
-          <form>
-            <input 
-              type="text"
-              name="description"
-              placeholder="Aprender..."
-              autoComplete="off"
-              className="form-control"
-            />
-            <button
-              type="submit"
-              className="btn btn-outline-primary mt-1 btn-block"
-            >
-              Agregar
-            </button>
-
-          </form>
+          <TodoAdd onNewTodo={handleNewTodo} />
         </div>
       </div>
 
