@@ -10,7 +10,6 @@ const init = () => {
 export const useTodo = () => {
 
   const [todos, dispatch] = useReducer(todoReducer, initialState, init)
-  const pendingTodo =
 
 
   useEffect(() => {
