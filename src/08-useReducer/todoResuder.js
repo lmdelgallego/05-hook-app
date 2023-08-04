@@ -6,12 +6,12 @@ export const todoReducer = (initialStade, action ) => {
     case '[TODO] Remove Todo':
       console.log(action.payload)
       return initialStade.filter(todo => todo.id !== action.payload);
-    // case 'toggle':
-    //   return initialStade.map(todo =>
-    //     (todo.id === action.payload)
-    //       ? {...todo, done: !todo.done}
-    //       : todo
-    //   )
+    case '[TODO] Toggle Todo':
+      return initialStade.map(todo =>
+        (todo.id === action.payload)
+          ? {...todo, done: !todo.done}
+          : todo
+      )
     // case 'toggle-old':
     //   return initialStade.map(todo => {
     //     if (todo.id === action.payload) {
