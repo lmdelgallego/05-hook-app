@@ -9,11 +9,11 @@ const init = () => {
 
 export const TodoApp = () => {
 
-  const { todos, handleNewTodo, handleDelete, handleToggleTodo } = useTodo()
+  const { todos, todosCount, pendingTodo, handleNewTodo, handleDelete, handleToggleTodo } = useTodo()
 
   return (
     <>
-      <h1>TodoApp {todos.length}, <small>pendientes: 2</small> </h1>
+      <h1>TodoApp {todosCount}, <small>pendientes: {pendingTodo}</small> </h1>
       <hr />
       <div className="row">
         <div className="col-7">

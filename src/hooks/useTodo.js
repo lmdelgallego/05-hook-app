@@ -10,6 +10,7 @@ const init = () => {
 export const useTodo = () => {
 
   const [todos, dispatch] = useReducer(todoReducer, initialState, init)
+  const pendingTodo =
 
 
   useEffect(() => {
@@ -41,6 +42,8 @@ export const useTodo = () => {
 
   return {
     todos,
+    pendingTodo: todos.filter( todo => !todo.done).length,
+    todosCount: todos.length,
     handleNewTodo,
     handleDelete,
     handleToggleTodo,
