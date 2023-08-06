@@ -4,9 +4,7 @@ import { HomePage, AboutPage, LoginPage, NavBar } from './';
 export const MainApp = () => {
   return (
     <>
-      <h1>MainApp</h1>
       <NavBar/>
-      <hr />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="login" element={<LoginPage />} />
