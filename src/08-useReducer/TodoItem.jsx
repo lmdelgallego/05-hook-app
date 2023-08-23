@@ -6,11 +6,19 @@ export const TodoItem = ({ todo, onDeleteTodo, onToggleTodo }) => {
       style={{ cursor: 'pointer' }}
       onDoubleClick={() => onToggleTodo(todo.id)}
     >
-      <span className={`align-self-center ${todo.done ? 'text-decoration-line-through' : ''} `}>
+      <span
+        className={`align-self-center ${
+          todo.done ? 'text-decoration-line-through' : ''
+        } `}
+        aria-label="span-description"
+      >
         {todo.description}
       </span>
       {!todo.done && (
-        <button className="btn btn-danger" onClick={() => onDeleteTodo(todo.id)}>
+        <button
+          className="btn btn-danger"
+          onClick={() => onDeleteTodo(todo.id)}
+        >
           Delete
         </button>
       )}
