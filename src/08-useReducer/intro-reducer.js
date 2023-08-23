@@ -1,11 +1,10 @@
-
 // const initialState = [{
 //   id: 1,
 //   todo: 'Recolactar las piedras del infinito',
 //   done: false
 // }]
 
-// const introReducer = (state = initialState, action = {}) => {  
+// const introReducer = (state = initialState, action = {}) => {
 
 //   if (action.type === '[TODO] add todo') {
 //     return [...state, action.payload];
@@ -13,7 +12,6 @@
 
 //   return state;
 // }
-
 
 // let todos = introReducer();
 

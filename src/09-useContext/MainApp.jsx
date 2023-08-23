@@ -3,10 +3,9 @@ import { HomePage, AboutPage, LoginPage, NavBar } from './';
 import { UserProvider } from './context/UserProvider';
 
 export const MainApp = () => {
-
   return (
     <UserProvider>
-      <NavBar/>
+      <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="login" element={<LoginPage />} />
@@ -15,5 +14,5 @@ export const MainApp = () => {
         <Route path="/*" element={<Navigate to="/about" />} />
       </Routes>
     </UserProvider>
-  )
-}
+  );
+};

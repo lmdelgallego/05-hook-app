@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function HooksApp() {
-  return (
-    <h1>HooksApp</h1>
-  )
+  return <h1>HooksApp</h1>;
 }
 
-export default HooksApp
+export default HooksApp;

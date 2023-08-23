@@ -1,17 +1,15 @@
-export const todoReducer = (initialStade, action ) => {
+export const todoReducer = (initialStade, action) => {
   switch (action.type) {
     case '[TODO] Add Todo':
       return [...initialStade, action.payload];
-      
+
     case '[TODO] Remove Todo':
-      console.log(action.payload)
-      return initialStade.filter(todo => todo.id !== action.payload);
+      console.log(action.payload);
+      return initialStade.filter((todo) => todo.id !== action.payload);
     case '[TODO] Toggle Todo':
-      return initialStade.map(todo =>
-        (todo.id === action.payload)
-          ? {...todo, done: !todo.done}
-          : todo
-      )
+      return initialStade.map((todo) =>
+        todo.id === action.payload ? { ...todo, done: !todo.done } : todo
+      );
     // case 'toggle-old':
     //   return initialStade.map(todo => {
     //     if (todo.id === action.payload) {
@@ -26,5 +24,5 @@ export const todoReducer = (initialStade, action ) => {
     //   )
     default:
       return initialStade;
-    }
-} 
+  }
+};
