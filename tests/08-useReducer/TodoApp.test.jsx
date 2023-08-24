@@ -10,19 +10,19 @@ describe('TodoApp', () => {
       {
         id: 1,
         description: 'Aprender React',
-        done: true,
+        done: true
       },
       {
         id: 2,
         description: 'Aprender Mongo',
-        done: false,
-      },
+        done: false
+      }
     ],
     todosCount: 2,
     pendingTodo: 2,
     handleNewTodo: jest.fn(),
     handleDelete: jest.fn(),
-    handleToggleTodo: jest.fn(),
+    handleToggleTodo: jest.fn()
   });
 
   test('should be render correctly ', () => {
