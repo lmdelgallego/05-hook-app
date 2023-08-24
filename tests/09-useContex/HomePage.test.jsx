@@ -9,7 +9,7 @@ describe('HomePage Component', () => {
     email: 'lmdelgallego@gmail.com'
   };
 
-  test('debe mostrar el componente correctamente', () => {
+  test('Should be render correctly', () => {
     render(
       <UserContext.Provider value={{ user: null }}>
         <HomePage />
@@ -21,7 +21,7 @@ describe('HomePage Component', () => {
     // screen.debug();
   });
 
-  test('debe mostrar el componente correctamente', () => {
+  test('Should be show correcty user info', () => {
     render(
       <UserContext.Provider value={{ user }}>
         <HomePage />
